@@ -122,9 +122,9 @@ g_meanscore_df <- data.frame(math = g_math_mean, writing= g_wr_mean, reading= g_
 g_meanscore_df
 
 require(gridExtra)
-plot1 <- ggplot(data=g_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity')
-plot2 <- ggplot(data=g_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity')
-plot3 <- ggplot(data=g_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity')
+plot1 <- ggplot(data=g_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') 
+plot2 <- ggplot(data=g_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') 
+plot3 <- ggplot(data=g_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') 
 grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\gender.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
