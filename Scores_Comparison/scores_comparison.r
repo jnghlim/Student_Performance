@@ -10,9 +10,9 @@ for (x in re_list){
 re_meanscore_df <- data.frame(math = re_math_mean, writing=re_wr_mean, reading=re_rd_mean, group = c("A", "B", "C", "D", "E"))
 
 require(gridExtra)
-plot1 <- ggplot(data=re_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity')
-plot2 <- ggplot(data=re_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity')
-plot3 <- ggplot(data=re_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity')
+plot1 <- ggplot(data=re_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') + geom_text(aes(label = round(re_math_mean,2)*100))
+plot2 <- ggplot(data=re_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') + geom_text(aes(label = round(re_wr_mean,2)*100))
+plot3 <- ggplot(data=re_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') + geom_text(aes(label = round(re_rd_mean,2)*100))
 grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\group.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
@@ -38,9 +38,9 @@ ploe_rd_mean
 ploe_meanscore_df <- data.frame(math = ploe_math_mean, writing=ploe_wr_mean, reading=ploe_rd_mean, group = c("BS", "SC", "MS", "AS", "HS", "SHS"))
 ploe_meanscore_df
 require(gridExtra)
-plot1 <- ggplot(data=ploe_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity')
-plot2 <- ggplot(data=ploe_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity')
-plot3 <- ggplot(data=ploe_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity')
+plot1 <- ggplot(data=ploe_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') + geom_text(aes(label = round(ploe_math_mean,2)*100))
+plot2 <- ggplot(data=ploe_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') + geom_text(aes(label = round(ploe_wr_mean,2)*100))
+plot3 <- ggplot(data=ploe_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') + geom_text(aes(label = round(ploe_rd_mean,2)*100))
 grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\parental_level.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
@@ -66,9 +66,9 @@ l_rd_mean
 l_meanscore_df <- data.frame(math = l_math_mean, writing=l_wr_mean, reading=l_rd_mean, group = c("Standard", "Free/Reduced"))
 l_meanscore_df
 require(gridExtra)
-plot1 <- ggplot(data=l_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity')
-plot2 <- ggplot(data=l_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity')
-plot3 <- ggplot(data=l_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity')
+plot1 <- ggplot(data=l_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') + geom_text(aes(label = round(l_math_mean,2)*100))
+plot2 <- ggplot(data=l_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') + geom_text(aes(label = round(l_wr_mean,2)*100))
+plot3 <- ggplot(data=l_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') + geom_text(aes(label = round(l_rd_mean,2)*100))
 grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\lunch.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
@@ -94,9 +94,9 @@ t_meanscore_df <- data.frame(math = t_math_mean, writing= t_wr_mean, reading= t_
 t_meanscore_df
 
 require(gridExtra)
-plot1 <- ggplot(data=t_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity')
-plot2 <- ggplot(data=t_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity')
-plot3 <- ggplot(data=t_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity')
+plot1 <- ggplot(data=t_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') + geom_text(aes(label = round(t_math_mean,2)*100))
+plot2 <- ggplot(data=t_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') + geom_text(aes(label = round(t_wr_mean,2)*100))
+plot3 <- ggplot(data=t_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') + geom_text(aes(label = round(t_rd_mean,2)*100))
 grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\test_preparation.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
@@ -122,9 +122,10 @@ g_meanscore_df <- data.frame(math = g_math_mean, writing= g_wr_mean, reading= g_
 g_meanscore_df
 
 require(gridExtra)
-plot1 <- ggplot(data=g_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') 
-plot2 <- ggplot(data=g_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') 
-plot3 <- ggplot(data=g_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') 
+plot1 <- ggplot(data=g_meanscore_df, aes(x=group, y=math)) + geom_bar(stat='identity') + geom_text(aes(label = round(g_math_mean,2)*100))
+plot2 <- ggplot(data=g_meanscore_df, aes(x=group, y=writing)) + geom_bar(stat='identity') + geom_text(aes(label = round(g_wr_mean,2)*100))
+plot3 <- ggplot(data=g_meanscore_df, aes(x=group, y=reading)) + geom_bar(stat='identity') + geom_text(aes(label = round(g_rd_mean,2)*100))
 grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\gender.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
+

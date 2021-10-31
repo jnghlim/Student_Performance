@@ -8,3 +8,5 @@ library("gridExtra")
 
 sdata <- read.csv("Student Performance New.csv")
 as_tibble(sdata)
+
+colnames(sdata)
