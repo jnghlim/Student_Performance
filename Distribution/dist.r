@@ -39,3 +39,12 @@ grid.arrange(plot1,plot2,plot3,plot4, plot5)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Distribution\\bar_dist.png"), arrangeGrob(plot1, plot2, plot3, plot4, plot5))
 dev.off()
 
+num_data <- sdata[num_var]
+
+require(gridExtra)
+hist1 <- ggplot(num_data, aes(x=math.percentage)) + geom_histogram()
+hist2 <- ggplot(num_data, aes(x=writing.score.percentage)) + geom_histogram()
+hist3 <- ggplot(num_data, aes(x=reading.score.percentage)) + geom_histogram()
+grid.arrange(hist1, hist2, hist3)
+ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Distribution\\score_dist.png"), arrangeGrob(hist1, hist2, hist3))
+dev.off()
