@@ -6,12 +6,14 @@ for (x in num_var){
     IQR = q3 - q1
     LB = q1 - 1.5*IQR
     UB = q3 + 1.5*IQR
-    if ((min(sdata[x]) < LB && max(sdata[x]) > UB){
+    if ((min(sdata[x]) < LB & max(sdata[x]) > UB)){
         print("No Outliers")
     } else {
         print("There is Outliers")
-        print(sdata[x] < LB)
-        print(sdata[x] > UB)
+        print(glue("Lower Bound is: {LB}"))
+        print(glue("Upper Bound is: {UB}"))
+        print(sdata[sdata[x] < LB, x])
+        print(sdata[sdata[x] > UB, x])
     }
 }
 
