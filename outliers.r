@@ -17,6 +17,4 @@ for (x in num_var){
     }
 }
 
-min(sdata["math.percentage"])
-quantile(sdata$math.percentage)
-quantile(sdata$math.percentage, 0.25, interpolation="nearest")
+
