@@ -9,7 +9,7 @@ for (x in num_var){
     if ((min(sdata[x]) < LB & max(sdata[x]) > UB)){
         print("No Outliers")
     } else {
-        print("There is Outliers")
+        print("There are Outliers")
         print(glue("Lower Bound is: {LB}"))
         print(glue("Upper Bound is: {UB}"))
         print(sdata[sdata[x] < LB, x])
@@ -17,4 +17,8 @@ for (x in num_var){
     }
 }
 
-
+### Boxplots
+box_data <- sdata %>% select(math.percentage, reading.score.percentage, writing.score.percentage)
+jpeg("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores\\scores_box_plot.jpeg", quality = 75)
+boxplot(box_data)
+dev.off()
