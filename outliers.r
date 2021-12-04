@@ -18,8 +18,15 @@ for (x in num_var){
 }
 ### Boxplots
 box_data <- sdata %>% select(math.percentage, reading.score.percentage, writing.score.percentage)
+colnames(box_data)
+myColors <- ifelse(colnames(box_data)=="math.percentage" , rgb(0.1,0.1,0.7,0.5) , 
+              ifelse(colnames(box_data)=="reading.score.percentage", rgb(0.8,0.1,0.3,0.6),
+              "grey90" ) )
+box_data
 jpeg("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores\\scores_box_plot.jpeg", quality = 75)
-boxplot(box_data)
+boxplot(box_data, col=c(rgb(0.1,0.1,0.7,0.5), rgb(0.8,0.1,0.3,0.6), "grey90"))
+legend("bottomleft", legend = c("Math Score","Reading Score", "Writing Score") , 
+    col = c(rgb(0.1,0.1,0.7,0.5) , rgb(0.8,0.1,0.3,0.6), "grey90") , pch=20 , pt.cex = 3, cex = 1, horiz = FALSE)
 dev.off()
 
 for (x in num_var) {
