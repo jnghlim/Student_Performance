@@ -129,3 +129,9 @@ grid.arrange(plot1,plot2,plot3)
 ggsave(glue("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores_Comparison\\gender.png"), arrangeGrob(plot1, plot2, plot3))
 dev.off()
 
+mean_m <- mean(sdata$math.percentage)
+mean_r <- mean(sdata$reading.score.percentage)
+mean_w <- mean(sdata$writing.score.percentage)
+mean_score <- c(mean_m, mean_r, mean_w)
+
+barplot(mean_score, names=c("math", "reading", 'writing'))
