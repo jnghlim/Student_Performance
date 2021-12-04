@@ -134,4 +134,6 @@ mean_r <- mean(sdata$reading.score.percentage)
 mean_w <- mean(sdata$writing.score.percentage)
 mean_score <- c(mean_m, mean_r, mean_w)
 
+jpeg("C:\\Users\\lim95\\Documents\\GitHub\\student_performance_r_project\\Scores\\mean_score_plot.jpeg", quality = 75)
 barplot(mean_score, names=c("math", "reading", 'writing'))
+dev.off()
